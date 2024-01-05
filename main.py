@@ -19,15 +19,6 @@ class PlaylistSort:
         except:
             print("Error : Nom de la playlist invalide ?")
 
-    def affichagePlaylist(self):
-        while self.__playlist['next']:
-            musiques = self.__sp.next(self.__playlist)
-            for musique in musiques['tracks']['items']:
-                musique = self.__sp.next(self.__playlist)
-                print(f"Nom musique: {musique['track']['name']}")
-                print(f"Artiste(s): {', '.join([artiste['name'] for artiste in musique['track']['artists']])}")
-                print("=" * 50)
-
     def sort(self):
         # première partie
         for musique in self.__playlist['items']:
